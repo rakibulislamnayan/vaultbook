@@ -2,7 +2,7 @@
 
 **Your private notebook vault.**
 
-Vaultbook is a private, offline-first encrypted notebook that runs entirely in your browser. Write, sketch, and attach images — everything is locked with **AES‑256‑GCM** and lives only on your device. No servers. No accounts. No tracking.
+Vaultbook is a private, offline-first encrypted notebook that runs entirely in your browser. Write, sketch, and attach images. Everything is locked with **AES‑256‑GCM** and lives only on your device. No servers. No accounts. No tracking.
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-2f7a68?style=for-the-badge)](https://rakibulislamnayan.github.io/vaultbook)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/rakibulislamnayan/vaultbook)
@@ -13,7 +13,7 @@ Vaultbook is a private, offline-first encrypted notebook that runs entirely in y
 
 Most note-taking apps expect you to sign in, sync your data to their cloud, and trust them with your writing. Vaultbook flips that around. Your notebook is a single `.vbk` file. You choose where it lives: a USB stick, your Downloads folder, an encrypted disk, or nowhere at all. The password you set never leaves your browser tab.
 
-If you close the tab or lose the password, the notebook is unrecoverable — and that is the point.
+If you close the tab or lose the password, the notebook is unrecoverable, and that is the point.
 
 ---
 
