@@ -4,14 +4,14 @@
 
 Vaultbook is a private, offline-first encrypted notebook that runs entirely in your browser. Write, sketch, and attach images — everything is locked with **AES‑256‑GCM** and lives only on your device. No servers. No accounts. No tracking.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-2f7a68?style=for-the-badge)](https://rakibulislamnayan.github.io/restrictednotebook-js)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/rakibulislamnayan/restrictednotebook-js)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-2f7a68?style=for-the-badge)](https://rakibulislamnayan.github.io/vaultbook)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/rakibulislamnayan/vaultbook)
 
 ---
 
 ## Why Vaultbook
 
-Most note-taking apps expect you to sign in, sync your data to their cloud, and trust them with your writing. Vaultbook flips that around. Your notebook is a single `.vbk` file. You choose where it lives — a USB stick, your Downloads folder, an encrypted disk, or nowhere at all. The password you set never leaves your browser tab.
+Most note-taking apps expect you to sign in, sync your data to their cloud, and trust them with your writing. Vaultbook flips that around. Your notebook is a single `.vbk` file. You choose where it lives: a USB stick, your Downloads folder, an encrypted disk, or nowhere at all. The password you set never leaves your browser tab.
 
 If you close the tab or lose the password, the notebook is unrecoverable — and that is the point.
 
@@ -22,15 +22,15 @@ If you close the tab or lose the password, the notebook is unrecoverable — and
 - **AES‑256‑GCM encryption** with a fresh salt and IV on every save
 - **PBKDF2** key derivation with 250 000 iterations of SHA‑256
 - **Password set before you start writing** — with a confirm field, because there's no reset link
-- **Write mode** — clean, distraction‑free typography (Fraunces serif on paper)
-- **Draw mode** — full sketch canvas with brush, eraser, colors, size, undo/redo
-- **Image attachments** — insert any image, view it fullscreen, remove it
-- **Panic Lock** — hide the notebook instantly; restore it in the same session with your password
-- **Export as PDF** — bundled offline, includes title, body, drawing, and images
-- **Export as TXT** — for plain‑text portability
-- **Light and dark themes** — remembers your choice
-- **100% offline** — open `index.html` directly, no server, no build step
-- **Backward compatible** — opens legacy `.rna` files from the old *R. Note*; saving converts them to `.vbk`
+- **Write mode**: clean, distraction‑free typography (Fraunces serif on paper)
+- **Draw mode**: full sketch canvas with brush, eraser, colors, size, undo/redo
+- **Image attachments**: insert any image, view it fullscreen, remove it
+- **Panic Lock**: hide the notebook instantly; restore it in the same session with your password
+- **Export as PDF**: bundled offline, includes title, body, drawing, and images
+- **Export as TXT**: for plain‑text portability
+- **Light and dark themes**: remembers your choice
+- **100% offline**: open `index.html` directly, no server, no build step
+- **Backward compatible**: opens legacy `.rna` files from the old *R. Note*; saving converts them to `.vbk`
 
 ---
 
@@ -56,7 +56,7 @@ Click **New Vaultbook**, choose a strong password, confirm it, and you're droppe
 Pressing **Save** (or <kbd>Ctrl</kbd>+<kbd>S</kbd>) does this:
 
 1. Snapshots the current title, body, drawing, and images into a JSON payload.
-2. Prepends a signature marker (`VAULTBOOK_V2::`) — used later to verify the password was correct.
+2. Prepends a signature marker (`VAULTBOOK_V2::`): used later to verify the password was correct.
 3. Generates a fresh 16‑byte salt and 12‑byte IV.
 4. Derives an AES‑256 key using PBKDF2‑SHA256 with 250 000 iterations of your password + salt.
 5. Encrypts the payload with AES‑256‑GCM (which also authenticates it against tampering).
@@ -64,7 +64,7 @@ Pressing **Save** (or <kbd>Ctrl</kbd>+<kbd>S</kbd>) does this:
 
 ### Opening
 
-Drop a `.vbk` file onto the **Open** screen, enter your password, and the file is decrypted in place. The signature marker inside the payload is checked — if it isn't there, the password was wrong and the app refuses to load anything.
+Drop a `.vbk` file onto the **Open** screen, enter your password, and the file is decrypted in place. The signature marker inside the payload is checked: if it isn't there, the password was wrong and the app refuses to load anything.
 
 ### Panic Lock (redesigned in v2)
 
@@ -73,7 +73,7 @@ The Panic button (or <kbd>Ctrl</kbd>+<kbd>L</kbd>) is meant for the moment someo
 - The current notebook is **re‑encrypted with the same password**, in memory.
 - The plaintext is **wiped from the editor and from memory**.
 - The password is **wiped from memory**.
-- Only the encrypted bytes remain — behind a full‑screen lock overlay.
+- Only the encrypted bytes remain, behind a full‑screen lock overlay.
 
 Enter your password again and the notebook is restored, exactly as you left it. If you close the tab, the encrypted buffer is gone; the notebook lives on only in whatever `.vbk` file you previously saved.
 
@@ -110,7 +110,7 @@ Once decrypted with the correct password, the plaintext starts with the signatur
 }
 ```
 
-The format is stable — future versions of Vaultbook will always be able to read v2 files.
+The format is stable. Future versions of Vaultbook will always be able to read v2 files.
 
 ### Legacy `.rna` files (from R. Note)
 
